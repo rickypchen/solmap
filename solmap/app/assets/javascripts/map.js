@@ -94,10 +94,22 @@ var initCAMap = function() {
 
 	//Create a tooltip, hidden at the start
 	function showTooltip(d) {
+		var name = d.properties.name.replace(", CA", "");
+
+		$.ajax({
+			url: '/county_data',
+			data: {name: name},
+		})
+		.done(function (countyData) {
+			tooltip.style("display","block").html(countyData);
+		})
+		.fail(function () {
+			console.log("Booo! You suck!")
+		});
+
 	  moveTooltip();
 
-	  tooltip.style("display","block")
-	      .text(d.properties.name);
+	  
 	}
 
 	//Move the tooltip to track the mouse
