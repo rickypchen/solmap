@@ -15,6 +15,7 @@ RSpec.describe SolarResourceController, type: :controller do
 		end
 
 		it "should save info to database based on county"
+		
 
 	end
 
