@@ -71,7 +71,8 @@ hashed_zipcodes = zipcodes.to_a.map { |row| row.to_hash }
 
 hashed_zipcodes.each do |zipcode|
 	state = State.find_by_abbrev(zipcode[:state])
-	Zipcode.create(code: zipcode[:zip], county_name: zipcode[:county], city_name: zipcode[:primary_city], state_id: state.id) if state
+        county = County.create(name: zipcode[:county], state_id: state.id) if state
+	Zipcode.create(code: zipcode[:zip], city_name: zipcode[:primary_city], county_id: county.id) if county
 end
 
 
