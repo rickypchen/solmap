@@ -1,0 +1,256 @@
+<html>
+<head>
+  <title></title>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+<script src="node_modules/datamaps/dist/datamaps.world.min.js"></script>
+<script src="node_modules/datamaps/dist/datamaps.usa.min.js"></script>
+<script src="node_modules/datamaps/dist/datamaps.all.min.js"></script>
+
+
+
+<div id="container" style="position: relative; width: 500px; height: 300px;"></div>
+<div id="container1" style="position: relative; width: 500px; height: 300px;"></div>
+<script>
+    var map = new Datamap({
+        element: document.getElementById('container'),
+        scope: 'usa',
+        fills: {
+            HIGH: 'red',
+            LOW: 'blue',
+            MEDIUM: 'grey',
+            UNKNOWN: 'rgb(0,0,0)',
+            defaultFill: 'orange'
+        },
+        data: {
+            AL: {
+              fillKey: 'LOW',
+              numberOfThings: 1300
+            },
+            AK: {
+              fillKey: 'LOW',
+              numberOfThings: 1300
+            },
+            AZ: {
+              fillKey: 'LOW',
+              numberOfThings: 1300
+            },
+            AR: {
+              fillKey: 'LOW',
+              numberOfThings: 1300
+            },
+            CA: {
+              fillKey: 'LOW',
+              numberOfThings: 1300
+            },
+            CO: {
+              fillKey: 'LOW',
+              numberOfThings: 1300
+            },
+            CT: {
+              fillKey: 'LOW',
+              numberOfThings: 1300
+            },
+            DE: {
+              fillKey: 'LOW',
+              numberOfThings: 1300
+            },
+            FL: {
+              fillKey: 'LOW',
+              numberOfThings: 1300
+            },
+            GA: {
+              fillKey: 'LOW',
+              numberOfThings: 1300
+            },
+            HI: {
+              fillKey: 'LOW',
+              numberOfThings: 1300
+            },
+            ID: {
+              fillKey: 'LOW',
+              numberOfThings: 1300
+            },
+            IL: {
+              fillKey: 'LOW',
+              numberOfThings: 1300
+            },
+            IN: {
+              fillKey: 'LOW',
+              numberOfThings: 1300
+            },
+            IA: {
+              fillKey: 'LOW',
+              numberOfThings: 1300
+            },
+            KS: {
+              fillKey: 'LOW',
+              numberOfThings: 1300
+            },
+            KY: {
+              fillKey: 'LOW',
+              numberOfThings: 1300
+            },
+            LA: {
+              fillKey: 'LOW',
+              numberOfThings: 1300
+            },
+            ME: {
+              fillKey: 'LOW',
+              numberOfThings: 1300
+            },
+            MD: {
+              fillKey: 'LOW',
+              numberOfThings: 1300
+            },
+            MA: {
+              fillKey: 'LOW',
+              numberOfThings: 1300
+            },
+            MI: {
+              fillKey: 'LOW',
+              numberOfThings: 1300
+            },
+            MN: {
+              fillKey: 'LOW',
+              numberOfThings: 1300
+            },
+            MS: {
+              fillKey: 'LOW',
+              numberOfThings: 1300
+            },
+            MO: {
+              fillKey: 'LOW',
+              numberOfThings: 1300
+            },
+            MT: {
+              fillKey: 'LOW',
+              numberOfThings: 1300
+            },
+            NE: {
+              fillKey: 'LOW',
+              numberOfThings: 1300
+            },
+            NV: {
+              fillKey: 'LOW',
+              numberOfThings: 1300
+            },
+            NH: {
+              fillKey: 'LOW',
+              numberOfThings: 1300
+            },
+            NJ: {
+              fillKey: 'LOW',
+              numberOfThings: 1300
+            },
+            NM: {
+              fillKey: 'LOW',
+              numberOfThings: 1300
+            },
+            NY: {
+              fillKey: 'LOW',
+              numberOfThings: 1300
+            },
+            NC: {
+              fillKey: 'LOW',
+              numberOfThings: 1300
+            },
+            ND: {
+              fillKey: 'LOW',
+              numberOfThings: 1300
+            },
+            OH: {
+              fillKey: 'LOW',
+              numberOfThings: 1300
+            },
+            OK: {
+              fillKey: 'LOW',
+              numberOfThings: 1300
+            },
+            OR: {
+              fillKey: 'LOW',
+              numberOfThings: 1300
+            },
+            PA: {
+              fillKey: 'LOW',
+              numberOfThings: 1300
+            },
+            RI: {
+              fillKey: 'LOW',
+              numberOfThings: 1300
+            },
+            SC: {
+              fillKey: 'LOW',
+              numberOfThings: 1300
+            },
+            SD: {
+              fillKey: 'LOW',
+              numberOfThings: 1300
+            },
+            TN: {
+              fillKey: 'LOW',
+              numberOfThings: 1300
+            },
+            TX: {
+              fillKey: 'LOW',
+              numberOfThings: 1300
+            },
+            UT: {
+              fillKey: 'LOW',
+              numberOfThings: 1300
+            },
+            VT: {
+              fillKey: 'LOW',
+              numberOfThings: 1300
+            },
+            VA: {
+              fillKey: 'LOW',
+              numberOfThings: 1300
+            },
+            WA: {
+              fillKey: 'LOW',
+              numberOfThings: 1300
+            },
+            WV: {
+              fillKey: 'LOW',
+              numberOfThings: 1300
+            },
+            WI: {
+              fillKey: 'LOW',
+              numberOfThings: 1300
+            },
+            WY: {
+              fillKey: 'LOW',
+              numberOfThings: 1300
+            },
+        },
+        geographyConfig: {
+            popupTemplate: function(geo, data) {
+                return ['<div class="hoverinfo"><strong>',
+                        'Number of things in ' + geo.properties.name,
+                        ': ' + data.numberOfThings,
+                        '</strong></div>'].join('');
+            }
+        }
+    });
+
+    //draw a legend for this map
+    map.legend();
+</script>
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
