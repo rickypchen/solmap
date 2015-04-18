@@ -4,7 +4,7 @@ RSpec.describe SolarResourceController, type: :controller do
 
 	describe 'GET #data' do 
 		before(:each) do 
-			get :data, zip: "91803"
+			get :data, county: "Orange County"
 		end
 
 		it 'should make a request to api and get response' do 
@@ -14,7 +14,7 @@ RSpec.describe SolarResourceController, type: :controller do
 			# expect(["outputs"]["avg_dni"]["annual"]).to eq 5.73
 		end
 
-		it "should save info to database based on zip"
+		it "should save info to database based on county"
 
 	end
 

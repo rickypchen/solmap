@@ -7,7 +7,7 @@ class SolarResourceController < ApplicationController
 
 	def data
 		base_url = "https://developer.nrel.gov/api/solar/solar_resource/v1.json?"
-		address = params[:zip]
+		address = params[:county]
 		api_key = ENV['NREL_KEY']
 		# address is a placeholder NEEDS to get
 		# address from params or input
