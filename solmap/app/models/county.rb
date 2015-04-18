@@ -37,11 +37,14 @@ class County < ActiveRecord::Base
     baseline = HTTParty.get("https://api.genability.com/rest/v1/typicals/baselines/best?&zipCode=#{zipcode}&buildingType=RESIDENTIAL",
     :headers => { "Authorization" => "Basic #{ENV['GENABILITY_HEADER']}" }
     )
-    meanAnnualConsumption = baseline['results'][0]["factors"]["meanAnnualConsumption"]
-    tariff_rate = HTTParty.get("https://api.genability.com/rest/prices?zipCode=#{zipcode}", :headers => { "Authorization" => "Basic #{ENV['GENABILITY_HEADER']}" })["results"][0]["rateMean"]
-
-    avg_annual_cost = tariff_rate * meanAnnualConsumption
-    self.avg_annual_cost = avg_annual_cost
-    self.save!
+    if baseline['results'][0]["factors"]
+      meanAnnualConsumption = baseline['results'][0]["factors"]["meanAnnualConsumption"]
+      tariff_rate = HTTParty.get("https://api.genability.com/rest/prices?zipCode=#{zipcode}", :headers => { "Authorization" => "Basic #{ENV['GENABILITY_HEADER']}" })["results"][0]["rateMean"]
+      if tariff_rate
+        avg_annual_cost = tariff_rate * meanAnnualConsumption
+        self.avg_annual_cost = avg_annual_cost
+        self.save!
+      end
+    end
   end
 end
