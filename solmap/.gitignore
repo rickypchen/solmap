@@ -11,3 +11,6 @@
 /log/*
 !/log/.keep
 /tmp
+
+# For api keys
+.env
