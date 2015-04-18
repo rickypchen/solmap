@@ -1,4 +1,4 @@
 class State < ActiveRecord::Base
-	has_many :zipcodes
+	has_many :counties
 	validates :abbrev, :name, uniqueness: true
 end

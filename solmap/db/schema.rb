@@ -11,10 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150418161428) do
+ActiveRecord::Schema.define(version: 20150418182806) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "counties", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "state_id"
+    t.float    "irradiance_dni"
+    t.float    "irradiance_ghi"
+    t.float    "irradiance_lat_tilt"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
+
+  add_index "counties", ["state_id"], name: "index_counties_on_state_id", using: :btree
 
   create_table "states", force: :cascade do |t|
     t.string   "name"
@@ -25,13 +37,10 @@ ActiveRecord::Schema.define(version: 20150418161428) do
 
   create_table "zipcodes", force: :cascade do |t|
     t.string   "code"
-    t.string   "county_name"
     t.string   "city_name"
-    t.integer  "state_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "county_id"
   end
-
-  add_index "zipcodes", ["state_id"], name: "index_zipcodes_on_state_id", using: :btree
 
 end
