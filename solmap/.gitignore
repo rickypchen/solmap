@@ -14,3 +14,6 @@
 
 # For api keys
 .env
+
+#for rbenv versioning
+.ruby-version
