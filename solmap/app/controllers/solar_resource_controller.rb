@@ -1,9 +1,9 @@
 require 'httparty'
 
 class SolarResourceController < ApplicationController
-	def index
+	# def index
 
-	end
+	# end
 
 	def data
 		base_url = "https://developer.nrel.gov/api/solar/solar_resource/v1.json?"
