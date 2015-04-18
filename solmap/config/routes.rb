@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   get 'solar_resource/data', to: 'solar_resource#data'
-
+  get 'genability/data', to: 'genability#data'
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
