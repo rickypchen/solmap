@@ -4,7 +4,7 @@ RSpec.describe SolarResourceController, type: :controller do
 
 	describe 'GET #data' do 
 		before(:each) do 
-			get :data, county: "Orange County"
+			get :data, zip: "91803"
 		end
 
 		it 'should make a request to api and get response' do 
