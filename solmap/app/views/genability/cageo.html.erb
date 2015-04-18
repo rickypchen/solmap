@@ -1,19 +1,28 @@
-// This is a manifest file that'll be compiled into application.js, which will include all the files
-// listed below.
-//
-// Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
-// or any plugin's vendor/assets/javascripts directory can be referenced here using a relative path.
-//
-// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
-// compiled file.
-//
-// Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
-// about supported directives.
-//
-//= require jquery
-//= require jquery_ujs
-//= require turbolinks
-//= require_tree .
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+body {
+  font: 12px sans-serif;
+}
+
+path {
+  stroke-width: 1px;
+  stroke: white;
+  fill: steelblue;
+  cursor: pointer;
+}
+
+path:hover, path.highlighted {
+  fill: tomato;
+}
+
+</style>
+<body>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+
+//Map dimensions (in pixels)
 var width = 520,
     height = 600;
 
@@ -44,7 +53,7 @@ var zoom = d3.behavior.zoom()
 
 svg.call(zoom);
 
-d3.json("/assets/ca.geojson",function(error,geodata) {
+d3.json("ca.geojson",function(error,geodata) {
   if (error) return console.log(error); //unknown error, check the console
 
   //Create a path for each map feature in the data
@@ -69,3 +78,5 @@ function zoomed() {
   features.attr("transform", "translate(" + zoom.translate() + ")scale(" + zoom.scale() + ")")
       .selectAll("path").style("stroke-width", 1 / zoom.scale() + "px" );
 }
+
+</script>
