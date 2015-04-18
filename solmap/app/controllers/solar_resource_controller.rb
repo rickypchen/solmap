@@ -19,11 +19,7 @@ class SolarResourceController < ApplicationController
 			}
 		}
 
-
-
 		@solar_response = HTTParty.get(base_url, options)
-		p @solar_response["outputs"]
-		p @solar_response
 		render json: @solar_response
 	end
 
