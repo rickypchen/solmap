@@ -12,6 +12,7 @@ class GenabilityController < ApplicationController
         :headers => { "Authorization" => "Basic #{ENV['GENABILITY_HEADER']}"}
         )
     @tariff_rate = HTTParty.get("https://api.genability.com/rest/prices?zipCode=#{@zipcode}", :headers => { "Authorization" => "Basic #{ENV['GENABILITY_HEADER']}" })["results"][0]["rateMean"]
-    render json: (@tariff_rate * @meanAnnualConsumption)
+
+    # render json: (@tariff_rate * @meanAnnualConsumption)
   end
 end
