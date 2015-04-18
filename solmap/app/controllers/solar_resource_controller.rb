@@ -5,9 +5,9 @@ class SolarResourceController < ApplicationController
 
 	end
 
-	def get_data
-		base_url = "/api/solar/solar_resource/v1.json?"
-		address = "91803"
+	def data
+		base_url = "https://developer.nrel.gov/api/solar/solar_resource/v1.json?"
+		address = params[:county]
 		api_key = ENV['NREL_KEY']
 		# address is a placeholder NEEDS to get
 		# address from params or input
@@ -19,9 +19,8 @@ class SolarResourceController < ApplicationController
 			}
 		}
 
-		response = HTTParty.get(base_url, options)
-		p response
-		render json: response
+		@solar_response = HTTParty.get(base_url, options)
+		render json: @solar_response
 	end
 
 end
