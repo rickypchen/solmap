@@ -5,6 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+require 'csv'
+
 states_hash =  {AL: "Alabama", 
                 AR: "Arkansas", 
                 AS: "American Samoa", 
@@ -63,3 +65,14 @@ states_hash =  {AL: "Alabama",
 states_hash.each do |abbreviation, name| 
 	State.create(abbrev: abbreviation, name: name)
 end
+
+zipcodes = CSV.open("#{Rails.root}/db/zip_code_database.csv", :headers => true, :header_converters => :symbol)
+hashed_zipcodes = zipcodes.to_a.map { |row| row.to_hash }
+
+hashed_zipcodes.each do |zipcode|
+	state = State.find_by_abbrev(zipcode[:state])
+	Zipcode.create(code: zipcode[:zip], county_name: zipcode[:county], city_name: zipcode[:primary_city], state_id: state.id) if state
+end
+
+
+
