@@ -1,0 +1,47 @@
+// Place all the styles related to the mapping controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  font: 12px sans-serif;
+}
+
+path {
+  stroke-width: 1px;
+  stroke: white;
+  fill: #999;
+  cursor: pointer;
+}
+
+path.q0-6 {
+  fill: #f1eef6;
+}
+
+path.q1-6 {
+  fill: #d0d1e6;
+}
+
+path.q2-6 {
+  fill: #a6bddb;
+}
+
+path.q3-6 {
+  fill: #74a9cf;
+}
+
+path.q4-6 {
+  fill: #2b8cbe;
+}
+
+path.q5-6 {
+  fill: #045a8d;
+}
+
+div.tooltip {
+  position: absolute;
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+  font-weight: bold;
+  padding: 4px 8px;
+  display: none;
+}

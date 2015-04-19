@@ -1,0 +1,6 @@
+<h4><%= @county.name %></h4>
+<p>Utility Provider: <%= @county.utility_provider ? @county.utility_provider : "Not Provided" %></p>
+<p>Average Annual Cost: <%= @county.avg_annual_cost ? "$#{@county.avg_annual_cost.round(2)}" : "Not Provided" %></p>
+<p>Irradiance DNI: <%= @county.irradiance_dni ? @county.irradiance_dni : "Not Provided" %></p>
+<p>Irradiance GHI: <%= @county.irradiance_ghi ? @county.irradiance_ghi : "Not Provided" %></p>
+<p>Lateral Tilt: <%= @county.irradiance_lat_tilt ? @county.irradiance_lat_tilt : "Not Provided" %></p>
