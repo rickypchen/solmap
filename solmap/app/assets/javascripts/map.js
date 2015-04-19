@@ -1,4 +1,74 @@
 var initCAMap = function() {
+	$('.cost').click(function (event) {
+		event.preventDefault();
+		features.selectAll("path").attr("class", function(d) {
+			var $that = $(this);
+	  	var name = d.properties.name.replace(", CA", "");
+	  	$.ajax({
+	  		url: '/colors',
+	  		data: {name: name},
+	  	})
+	  	.done(function (countyData) {
+	  		var cost = countyData.avg_annual_cost;
+	  		console.log(cost);
+	  		if (cost >= 3000 ) {
+	  			$that.attr("class", "q5-6");
+	  		} else if ( cost >= 2500 && cost < 3000 ) {
+	  			$that.attr("class", "q4-6");
+	  		} else if ( cost >= 2200 && cost < 2500 ) {
+	  			$that.attr("class", "q3-6");
+	  		} else if ( cost >= 1500 && cost < 2200 ) {
+	  			$that.attr("class", "q1-6");
+	  		} else if ( cost < 1500 ) {
+	  			$that.attr("class", "q0-6");
+	  		}
+	  	})
+	  	.fail(function () {
+	  		console.log("Booo! You suck!")
+	  	});
+
+	  });
+	});
+
+	$('.dni').click(function (event) {
+		event.preventDefault();
+		features.selectAll("path").attr("class", function(d) {
+			var $that = $(this);
+	  	var name = d.properties.name.replace(", CA", "");
+	  	$.ajax({
+	  		url: '/colors',
+	  		data: {name: name},
+	  	})
+	  	.done(function (countyData) {
+	  		var dni = countyData.irradiance_dni;
+    		if (dni >= 7) {
+    			$that.attr("class", "q5-6");
+    		} else if ( dni >= 6.5 && dni < 7 ) {
+    			$that.attr("class", "q4-6");
+    		} else if ( dni >= 6 && dni < 6.5 ) {
+    			$that.attr("class", "q3-6");
+    		} else if ( dni >= 5.5 && dni < 6 ) {
+    			$that.attr("class", "q2-6");
+    		} else if ( dni >= 5 && dni < 5.5 ) {
+    			$that.attr("class", "q1-6");
+    		} else if ( dni < 5 ) {
+    			$that.attr("class", "q0-6");
+    		}
+	  	})
+	  	.fail(function () {
+	  		console.log("Booo! You suck!")
+	  	});
+
+	  });
+	});
+
+
+
+
+
+
+
+
 	var width = 520,
 	    height = 600;
 
