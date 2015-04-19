@@ -1,20 +1,16 @@
-body {
-  background-image:;
-}
-
-nav {
-}
-
 #main-title {
   text-align: center;
   font-family: "Lobster";
   font-size: 50px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 #sub-title {
   text-align: center;
   font-family: "Lobster";
   font-size: 30px;
+  margin-bottom: 5px;
 }
 
 .logo {
