@@ -40,7 +40,7 @@ class County < ActiveRecord::Base
       tariff_data = get_tariff_data(zipcode)
       tariff_rate = tariff_data["results"][0]["rateMean"]
       master_tariff = tariff_data['results'][0]['masterTariffId']
-      p utility_provider = get_utility_provider(master_tariff)
+      utility_provider = get_utility_provider(master_tariff)
       self.utility_provider = utility_provider if utility_provider
       if tariff_rate
         self.avg_annual_cost = tariff_rate * meanAnnualConsumption

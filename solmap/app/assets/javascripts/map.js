@@ -39,11 +39,38 @@ var initCAMap = function() {
 
 	  //Create a path for each map feature in the data
 	  features.selectAll("path")
-	    .data(geodata.features)
+	  	.data(geodata.features)
 	    .enter()
 	    .append("path")
 	    .attr("d",path)
-	    .attr("class", function(d) { return (typeof color(d.properties.geoid) == "string" ? color(d.properties.geoid) : ""); })
+	    .attr("class", function(d) {
+	    	var $that = $(this);
+	    	var name = d.properties.name.replace(", CA", "");
+	    	$.ajax({
+	    		url: '/colors',
+	    		data: {name: name},
+	    	})
+	    	.done(function (countyData) {
+	    		var dni = countyData.irradiance_dni;
+	    		if (dni >= 7) {
+	    			$that.attr("class", "q5-6");
+	    		} else if ( dni >= 6.5 && dni < 7 ) {
+	    			$that.attr("class", "q4-6");
+	    		} else if ( dni >= 6 && dni < 6.5 ) {
+	    			$that.attr("class", "q3-6");
+	    		} else if ( dni >= 5.5 && dni < 6 ) {
+	    			$that.attr("class", "q2-6");
+	    		} else if ( dni >= 5 && dni < 5.5 ) {
+	    			$that.attr("class", "q1-6");
+	    		} else if ( dni < 5 ) {
+	    			$that.attr("class", "q0-6");
+	    		}
+	    	})
+	    	.fail(function () {
+	    		console.log("Booo! You suck!")
+	    	});
+
+	    })
 	    .on("mouseover",showTooltip)
 	    .on("mousemove",moveTooltip)
 	    .on("mouseout",hideTooltip)

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'solar_resource/data', to: 'solar_resource#data'
   get 'genability/data', to: 'genability#data'
   get 'mapping/ca', to: 'mapping#ca'
+  get 'colors', to: 'mapping#colors'
 
   get 'county_data', to: 'mapping#county_data'
   # You can have the root of your site routed with "root"
