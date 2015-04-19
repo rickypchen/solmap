@@ -15,7 +15,7 @@ var initCAMap = function() {
 	    .projection(projection);
 
 	//Create an SVG
-	var svg = d3.select("body").append("svg")
+	var svg = d3.select("#state").append("svg")
 	    .attr("width", width)
 	    .attr("height", height);
 
@@ -29,7 +29,7 @@ var initCAMap = function() {
 	    .range(d3.range(6).map(function(i) { return "q" + i + "-6"; }));
 
 	//Create a tooltip, hidden at the start
-	var tooltip = d3.select("body").append("div").attr("class","tooltip");
+	var tooltip = d3.select("#state").append("div").attr("class","tooltip");
 
 	//Keeps track of currently zoomed feature
 	var centered;

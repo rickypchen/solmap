@@ -2,12 +2,26 @@
 <html>
 <head>
   <title>Solmap</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script> 
+  <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<nav>
+<div id="main-nav">
+    <h1 id="main-title">Solmap</h1>
+</div>
+<ul class="sub-title">
+  <li class="logo"><%= image_tag("noun_7961.png") %></li>
+  <li>
+    <h2 id="sub-title">Find your SolMate</h2>
+  </li>
+  <li class="logo"><%= image_tag("noun_7961.png") %></li>
+</ul>
+</nav>
 
 <%= yield %>
 

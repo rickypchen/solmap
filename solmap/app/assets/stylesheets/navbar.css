@@ -1,0 +1,41 @@
+body {
+  background-image:;
+}
+
+nav {
+}
+
+#main-title {
+  text-align: center;
+  font-family: "Lobster";
+  font-size: 50px;
+}
+
+#sub-title {
+  text-align: center;
+  font-family: "Lobster";
+  font-size: 30px;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+}
+
+.logo img {
+  height: 100%;
+  width: 100%;
+}
+
+ul li {
+  display: inline-block;
+  list-style: none;
+}
+
+.sub-title {
+  text-align: center;
+}
+
+.datamap {
+  margin: auto 105px;
+}
