@@ -11,11 +11,11 @@ Sponsors: 11th Hour Foundation, Enphase Energy, Sungevity, Sunrun, Hanergy, Gena
 
 ##Inspiration
 
-We wanted to create a simple tool for solar companies to target potential solar costumers. SolMap pulls data from a variety of sources in order to determine the most attractive solar markets in the country and display it in an attractive way.
+We wanted to create a simple tool for solar companies to target potential solar customers. SolMap pulls data from a variety of sources in order to determine the most attractive solar markets in the country and display it in an attractive way.
 
 ##How it works
 
-We use the Genability API and the Nrel API to collect data on counties. We sort counties based on their DNI (direct normal irradiance) and by average annual utility cost for residents.  Darker shaded counties signify those with the highest costs.
+We used the Genability API and the Nrel API to collect data on counties. We sorted counties based on their DNI (direct normal irradiance) and by average annual utility cost for residents.  Darker shaded counties signify those with the highest costs.
 
 High utility costs plus good DNI means that a customer could save a lot of money by switching to solar.
 
@@ -23,11 +23,11 @@ High utility costs plus good DNI means that a customer could save a lot of money
 
 Consuming Genability's API was difficult because it was so new.  We were able to eventually get the data that we needed, but searching through documentation to find what we needed took a lot of our time.
 
-We we're dealing with a HUGE amount of data.  Sorting through every zip-code/county in the U.S. meant there was little room for error.
+We were dealing with a HUGE amount of data.  Sorting through every zip-code/county in the U.S. meant there was little room for error.
 
 ##Accomplishments:
 
-We we're able to pitch and demo our working MVP after 8 hours of work.
+We were able to pitch and demo our working MVP after 8 hours of work.
 
 ##What we learned
 
