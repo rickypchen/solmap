@@ -11,7 +11,7 @@ Sponsors: 11th Hour Foundation, Enphase Energy, Sungevity, Sunrun, Hanergy, Gena
 
 ##Inspiration
 
-We wanted to create a simple tool for solar companies to target potential solar custumers. SolMap pulls data from a variety of sources in order to determine the most attractive solar markets in the country and display it in an attractive way.
+We wanted to create a simple tool for solar companies to target potential solar customers. SolMap pulls data from a variety of sources in order to determine the most attractive solar markets in the country and display it in an attractive way.
 
 ##How it works
 
