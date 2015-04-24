@@ -1,7 +1,7 @@
 # SolMap
 *Finding attractive solar markets via chloropleth map visualization of utility data and solar irradiance across the US*
 
-This project was created in 8 hours as part of SfunCube's Solar Hackathon 2015.
+This project was created in 8 hours as part of [SfunCube's Solar Hackathon 2015.](https://www.youtube.com/watch?v=QctPDZujLSg "youtube-link")
 
 *"SfunCube's Solar Hackathon brings the Bay Area’s most hardcore developers, creative designers, and brilliant solar business minds together to accelerate solar adoption in the US and around the world"*
 
